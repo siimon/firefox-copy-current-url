@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Copy Link",
+  "version": "1.0.0",
+  "description": "Copy the current tab's URL to the clipboard with a keyboard shortcut.",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "copy-link@nyberg.io",
+      "strict_min_version": "115.0"
+    }
+  },
+
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting",
+    "clipboardWrite",
+    "notifications"
+  ],
+
+  "background": {
+    "scripts": ["toast.js", "background.js"]
+  },
+
+  "action": {
+    "default_title": "Copy current URL (Ctrl+Shift+C)",
+    "default_icon": {
+      "48": "icons/icon.svg",
+      "96": "icons/icon.svg"
+    }
+  },
+
+  "icons": {
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg"
+  },
+
+  "commands": {
+    "copy-current-url": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+C",
+        "mac": "MacCtrl+Shift+C"
+      },
+      "description": "Copy the current tab's URL to the clipboard"
+    }
+  }
+}
